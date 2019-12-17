@@ -15,7 +15,7 @@
     dest: /etc/httpd/conf/httpd.conf
   notify: restart-apache-service
   tags:
-     - rpm
+    - rpm
 
 - name: Ensure latest httpd.conf file is present for Container
   template:
@@ -29,14 +29,14 @@
     src: index.html.j2
     dest: /var/www/html/index.html
   tags:
-     - rpm
+    - rpm
 
 - name: Ensure latest index.html file is present for Container
   template:
     src: index.html.j2
     dest: /home/student22/ansible-for-devops-workshop/siteb/var/www/html/index.html
   tags:
-     - container
+    - container
 
 - name: Ensure httpd service is started and enabled
   service:
@@ -44,4 +44,4 @@
     state: started
     enabled: yes
   tags:
-     - rpm
+    - rpm
